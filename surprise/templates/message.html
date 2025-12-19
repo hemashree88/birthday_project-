@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>For You 💗</h1>
+<p style="font-size:1.1rem; color:#444; white-space:pre-line;">
+    {{ msg.message }}
+</p>
+<a href="{% url 'gallery' %}" class="btn">Our Memories 📸</a>
+{% endblock %}

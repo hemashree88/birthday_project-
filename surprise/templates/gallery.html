@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Our Beautiful Memories 💕</h1>
+
+{% for img in images %}
+    <img src="{{ img.image.url }}" style="width:90%; max-width:300px; border-radius:20px; margin:15px;">
+{% endfor %}
+
+{% endblock %}
