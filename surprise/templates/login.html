@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome 💗</h1>
+<p>Login to see your surprise</p>
+
+<form method="post">
+    {% csrf_token %}
+    <input name="username" placeholder="Username" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <button class="btn">Login 💕</button>
+</form>
+
+<p>
+    New here?
+    <a href="/signup/">Create account 🎀</a>
+</p>
+{% endblock %}

@@ -6,7 +6,14 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+
+    # 🔐 ROOT = LOGIN
+    path('', views.login_view, name='login'),
+    path('signup/', views.signup, name='signup'),
+    path('logout/', views.logout_view, name='logout'),
+
+    # 💗 SURPRISE FLOW
+    path('home/', views.home, name='home'),
     path('birthday/', views.birthday, name='birthday'),
     path('ready/', views.ready, name='ready'),
     path('message/', views.message, name='message'),

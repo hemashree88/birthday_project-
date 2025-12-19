@@ -1,92 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>For My Love 💗</title>
-
-    <!-- Mobile Friendly -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Romantic Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            padding: 0;
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+            background: linear-gradient(#ffe6f0, #ffffff);
             text-align: center;
-            overflow-x: hidden;
         }
-
-        .container {
-            padding: 60px 20px;
-        }
-
-        h1 {
-            color: #d63384;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: #444;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
+        .container { padding: 60px 20px; }
+        h1 { color: #d63384; }
         .btn {
             background: #ffb6c1;
             color: white;
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1rem;
-            display: inline-block;
-            margin-top: 30px;
-            transition: 0.3s ease;
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            margin-top: 20px;
         }
-
-        .btn:hover {
-            background: #ff8fab;
+        input {
+            padding: 10px;
+            width: 80%;
+            max-width: 280px;
+            margin: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
         }
-
-        /* 🌸 Flower shower */
         .flower {
             position: fixed;
-            top: -50px;
-            font-size: 24px;
-            animation: fall linear infinite;
-            pointer-events: none;
+            top: -30px;
+            animation: fall 6s linear infinite;
+            font-size: 20px;
         }
-
         @keyframes fall {
-            to {
-                transform: translateY(110vh);
-            }
+            to { transform: translateY(110vh); }
         }
     </style>
 </head>
 
 <body>
+<script>
+for (let i = 0; i < 18; i++) {
+    let f = document.createElement("div");
+    f.className = "flower";
+    f.innerHTML = "🌸";
+    f.style.left = Math.random()*100 + "vw";
+    f.style.animationDuration = 5 + Math.random()*5 + "s";
+    document.body.appendChild(f);
+}
+</script>
 
-    <!-- 🌸 Flower Container -->
-    <script>
-        for (let i = 0; i < 20; i++) {
-            const flower = document.createElement("div");
-            flower.className = "flower";
-            flower.innerHTML = "🌸";
-            flower.style.left = Math.random() * 100 + "vw";
-            flower.style.animationDuration = (5 + Math.random() * 5) + "s";
-            flower.style.animationDelay = Math.random() * 5 + "s";
-            document.body.appendChild(flower);
-        }
-    </script>
-
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
-
+<div class="container">
+{% block content %}{% endblock %}
+</div>
 </body>
 </html>
