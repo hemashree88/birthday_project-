@@ -22,16 +22,6 @@ def login_view(request):
     return render(request, 'login.html')
 
 
-def signup(request):
-    if request.method == 'POST':
-        User.objects.create_user(
-            username=request.POST.get('username'),
-            password=request.POST.get('password')
-        )
-        return redirect('/')
-    return render(request, 'signup.html')
-
-
 def logout_view(request):
     logout(request)
     return redirect('/')
